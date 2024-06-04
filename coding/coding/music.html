@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Audio Embedder</title>
+    <style>
+        /* Add some basic styling to the page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        /* Style the input field and button */
+        input[type="text"] {
+            width: 50%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+
+        /* Style the new window with the audio embed */
+        .audio-embed {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #333;
+        }
+
+        .audio-embed audio {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>YouTube Audio Embedder</h1>
+    <input type="text" id="youtubeUrl" placeholder="Enter YouTube URL">
+    <button onclick="embedAudio()">Embed Audio</button>
+
+    <script>
+        function embedAudio() {
+            var url = document.getElementById('youtubeUrl').value;
+            var videoId = url.split('v=')[1];
+            var ampersandPosition = videoId.indexOf('&');
+            if(ampersandPosition != -1) {
+                videoId = videoId.substring(0, ampersandPosition);
+            }
+
+            var newWindow = window.open("", "_blank");
+            newWindow.document.write(`
+                <div class="audio-embed">
+                    <audio controls>
+                        <source src="https://www.youtube.com/embed/${videoId}?autoplay=1" type="audio/mp4">
+                    </audio>
+                </div>
+            `);
+        }
+    </script>
+</body>
+</html>
