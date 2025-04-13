@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Games</title>
+    <style>
+        body {
+            background-color: #001f3f;
+            color: rgb(255, 255, 255);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .clock {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            font-size: 24px;
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff;
+        }
+        #header {
+            color: #00ffff;
+            text-align: center;
+            margin-top: 50px;
+            font-size: 3em;
+            text-shadow: 0 0 10px #00ffff;
+        }
+        #game-box {
+            width: 300px;
+            margin: 50px auto;
+            text-align: center;
+            border: 2px solid #00ffff;
+            padding: 10px;
+            background-color: #003366;
+        }
+        #game-box img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+   <script>
+ function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+   </script>
+     
+     <div class="clock" id="clock"></div>
+    <div id="header">Apex Games</div>
+    <div id="game-box">
+        <img src="10-minutes-till-dawn.jpeg" alt="Ten Minutes Till Dawn">
+        <p>Active 3rd person FPS game that includes upgrading, try to survive</p>
+    </div>
+</body>
+</html>
