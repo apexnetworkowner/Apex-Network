@@ -7,19 +7,8 @@
     <link href="/assets/CSS/gamehome.css/" rel="stylesheet" />
 </head>
 <body>
-   <script>
- function updateClock() {
-            const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
+   <script src="/assets/JS/clock.js/"></script>
 
-   </script>
-     
      <div class="clock" id="clock"></div>
     <div id="header">Apex Games</div>
     <div id="game-box">
