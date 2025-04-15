@@ -1,1 +1,1 @@
-Apex is a fast, innovative, and good looking proxy used for bypassing web restrictions and making school admins across the world cry.
+Apex is a fun, fast, and innovative game site, whether you want to use emulators or play flash games or even regular games, its all here ready for you to open the site so what are you waiting for? Join now!
